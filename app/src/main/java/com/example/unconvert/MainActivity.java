@@ -27,6 +27,10 @@ private EditText editText,editText2;
     //function to convert kg to lbs
     public void calculate(View view){
         String s = editText.getText().toString();
+        if(s.isEmpty()){
+            Toast.makeText(this, "Please Enter the Weight!!", Toast.LENGTH_SHORT).show();
+            return ;
+        }
         double kg = Double.parseDouble(s);
         double pound = 2.205 * kg;
         editText2.setText(""+Math.round(pound*100.0)/100.0);
@@ -34,6 +38,10 @@ private EditText editText,editText2;
     //function to convert lbs to kg
     public void calculate1(View view){
         String s = editText.getText().toString();
+        if(s.isEmpty()){
+            Toast.makeText(this, "Please Enter the Weight!!", Toast.LENGTH_SHORT).show();
+            return ;
+        }
         double lbs = Double.parseDouble(s);
         double kg = lbs/2.205;
         editText2.setText(""+Math.round(kg*100.0)/100.0);
